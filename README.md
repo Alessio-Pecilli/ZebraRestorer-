@@ -1,43 +1,24 @@
-# Pescetti
+🐟 ZebraRestorer: Deep Learning for Bio-Imaging 🧬
+ZebraRestorer is a computer vision pipeline designed to fix and enhance images of zebrafish larvae. It specializes in "cleaning" images captured in extremely low-light conditions, where traditional cameras only see grainy noise. Using a U-Net neural network, the system learns how to reconstruct high-quality anatomical details from raw, noisy data.
 
-🐟 Repository per esperimenti di segmentazione e sviluppo modelli (es. U-Net) nel progetto **Pescetti**.
+🚀 What it does
+🔬 Low-Light Recovery: Specifically tuned for "Photon Counting" data—where the camera detects individual particles of light.
 
-## ✨ Obiettivo
+✨ Noise Cleaning: Uses a specialized pre-processing step to stabilize image fluctuations, making it easier for the AI to understand the shapes.
 
-Costruire una pipeline chiara e ripetibile per:
-- preprocessing dei dati
-- training dei modelli
-- valutazione e confronto esperimenti
+🧠 Smart Reconstruction: Features a U-Net architecture that looks at both the "big picture" (the larva's shape) and the "tiny details" (cells and tissues) at the same time.
 
-## 🗂️ Struttura consigliata
+🛠️ Smart Data Handling: Includes a custom system to stack and align thousands of rows of raw sensor data into clear, 2D images.
 
-- `notebooks/` - analisi, prove e visualizzazioni
-- `src/` - codice riutilizzabile (training, preprocessing, utilities)
-- `configs/` - configurazioni esperimenti
-- `outputs/` - risultati locali non versionati
+📐 Reliable Testing: Uses a strict spatial-split method to ensure the AI is actually learning and not just "memorizing" the images.
 
-## 🛡️ Regole di versionamento
+🛠️ How it works (The Engineering Side)
+The project is built with a modular approach:
 
-Il progetto usa un `.gitignore` restrittivo per evitare push accidentali di file pesanti o sensibili:
+The Pre-Processor: Cleans the raw data and prepares it for the neural network.
 
-- 🧠 **modelli/checkpoint** (`*.pt`, `*.pth`, `*.onnx`, `*.h5`, `*.pkl`, ecc.)
-- 📊 **dataset/tabellari** (`*.csv`, `*.asc`, `*.parquet`, ecc.)
-- 🖼️ **immagini/media** (`*.png`, `*.jpg`, `*.jpeg`, `*.tiff`, `*.webp`, ecc.)
-- 🧹 **cache e temporanei** (cache Python, checkpoint notebook, log)
+The Model: A "Deep Convolutional" network that acts like a smart filter, removing grain while keeping the edges sharp.
 
-Se ti serve tracciare eccezioni specifiche, aggiungi regole `!pattern` nel `.gitignore`.
+The Trainer: A robust loop that feeds small "patches" of images to the AI, using data augmentation (rotations and flips) to make the model more accurate.
 
-## 🚀 Avvio rapido
-
-1. Crea e attiva un ambiente virtuale Python.
-2. Installa le dipendenze del progetto.
-3. Esegui notebook o script di training/valutazione.
-
-## ✅ Prima del push
-
-Controlla sempre cosa verra` tracciato:
-
-```bash
-git status
-git ls-files
-```
+The Scaler: Automatically adjusts image sizes to make sure the input and output match perfectly.
