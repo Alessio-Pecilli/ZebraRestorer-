@@ -1,0 +1,85 @@
+# -----------------------------
+# OS / Editor
+# -----------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# -----------------------------
+# Python / Notebook cache
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# -----------------------------
+# Logs and temporary files
+# -----------------------------
+*.log
+*.tmp
+*.temp
+
+# -----------------------------
+# ML artifacts: models, weights, checkpoints
+# -----------------------------
+models/
+model/
+checkpoints/
+weights/
+runs/
+artifacts/
+wandb/
+mlruns/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.hdf5
+*.joblib
+*.pkl
+*.pickle
+*.safetensors
+*.tflite
+
+# -----------------------------
+# Data files: tabular / geospatial / exports
+# -----------------------------
+data/
+dataset/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.h5ad
+*.asc
+
+# -----------------------------
+# Images and media (requested)
+# -----------------------------
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tif
+*.tiff
+*.webp
+*.svg
+*.mp4
+*.avi
+*.mov
